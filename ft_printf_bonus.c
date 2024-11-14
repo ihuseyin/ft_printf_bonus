@@ -69,7 +69,10 @@ static int	ft_print_format(char specifier, va_list ap, t_flags *flags)
 	else if (specifier == '%')
 		count = write(1, "%", 1);
 	else
+	{
+		count += write(1, "%", 1);
 		count += write(1, &specifier, 1);
+	}
 	return (count);
 }
 
